@@ -1,7 +1,5 @@
 package sample;
 
-import java.io.IOException;
-import java.net.URL;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,15 +8,26 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class Controller {
+import java.io.IOException;
+
+public class AddController {
 
     @FXML
-    private Button goButton;
+    private TextField data;
+
+    @FXML
+    private TextField tool;
+
+    @FXML
+    private TextField cost;
+
+    @FXML
+    private Button backButton;
 
     @FXML
     void initialize() {
-        goButton.setOnAction(event -> {
-            goButton.getScene().getWindow().hide();
+        backButton.setOnAction(event -> {
+            backButton.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/sample/dataWindows.fxml"));
@@ -35,5 +44,4 @@ public class Controller {
             stage.showAndWait();
         });
     }
-
 }
